@@ -7,6 +7,7 @@ import jakarta.annotation.Nonnull;
 
 import java.time.ZonedDateTime;
 import java.util.Optional;
+import java.util.Set;
 
 /**
  * Key-value storage service, provide ability to get and set values.
@@ -15,6 +16,22 @@ import java.util.Optional;
  * @since 0.0.1
  */
 public interface KeyValueStorageService {
+
+    /**
+     * Get set of all sections
+     *
+     * @return set of sections
+     */
+    @Nonnull
+    Set<String> getSpaces();
+
+    /**
+     * Get set of all keys in space
+     *
+     * @return set of keys
+     */
+    @Nonnull
+    Set<String> getKeys(@Nonnull String space);
 
     /**
      * Get stored value.<br/>
