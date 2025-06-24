@@ -34,6 +34,15 @@ public interface KeyValueStorageService {
     Set<String> getKeys(@Nonnull String space);
 
     /**
+     * Delete space.<br/>
+     *
+     * @param space storage space identifier
+     */
+    void delete(
+            @Nonnull String space
+    );
+
+    /**
      * Get stored value.<br/>
      *
      * @param space storage space identifier
