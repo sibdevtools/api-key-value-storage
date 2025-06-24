@@ -1,0 +1,21 @@
+package com.github.sibdevtools.session.api.rq;
+
+import lombok.*;
+
+import java.io.Serializable;
+import java.time.ZonedDateTime;
+
+/**
+ * @author sibmaks
+ * @since 0.0.1
+ */
+@Setter
+@Getter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class SetValueRq implements Serializable {
+    private String key;
+    private Serializable value;
+    private ZonedDateTime expiredAt;
+}
