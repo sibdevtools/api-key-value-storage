@@ -15,6 +15,7 @@ import java.time.ZonedDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class SetValueRq implements Serializable {
+    private String space;
     private String key;
     private Serializable value;
     private ZonedDateTime expiredAt;

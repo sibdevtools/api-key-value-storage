@@ -19,11 +19,15 @@ public interface KeyValueStorageService {
     /**
      * Get stored value.<br/>
      *
-     * @param key data identifier
+     * @param space storage space identifier
+     * @param key   data identifier
      * @return storage content or empty
      */
     @Nonnull
-    Optional<GetValueRs> get(@Nonnull String key);
+    Optional<GetValueRs> get(
+            @Nonnull String space,
+            @Nonnull String key
+    );
 
     /**
      * Set stored value<br/>
@@ -37,12 +41,14 @@ public interface KeyValueStorageService {
     /**
      * Set stored value<br/>
      *
+     * @param space     storage space identifier
      * @param key       data identifier
      * @param expiredAt new expiration date
      * @return meta information of stored value
      */
     @Nonnull
     SetValueRs prolongate(
+            @Nonnull String space,
             @Nonnull String key,
             @Nonnull ZonedDateTime expiredAt
     );
@@ -50,8 +56,12 @@ public interface KeyValueStorageService {
     /**
      * Delete stored value.<br/>
      *
-     * @param key data identifier
+     * @param space storage space identifier
+     * @param key   data identifier
      */
-    void delete(@Nonnull String key);
+    void delete(
+            @Nonnull String space,
+            @Nonnull String key
+    );
 
 }
