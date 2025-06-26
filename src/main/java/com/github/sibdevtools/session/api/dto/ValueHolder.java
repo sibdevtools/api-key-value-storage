@@ -13,7 +13,7 @@ public interface ValueHolder extends Serializable {
      *
      * @return stored value
      */
-    Object getValue();
+    byte[] getValue();
 
     /**
      * Get value meta
